@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+  <header>
+    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <span>© {{ 'now' | date: "%Y" }} {{ site.title }}</span>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/timeago.js@4.0.2/dist/timeago.min.js"></script>
+  <script>timeago.render(document.querySelectorAll('time.timeago'));</script>
+</body>
+</html>
